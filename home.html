@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome - The Pig-game</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+
+    <div class='users'>
+
+        <h2 id='titleHome'>Welcome to The PIG-GAME</h2>
+
+        <input id='p-00' class='input-Player' type='text' placeholder='First Player'></input>
+        <input id='p-01' class='input-Player' type='text' placeholder='Second Player'></input>
+
+        <button id='go-Game' class='go-Btn'>Let's Go</button>
+
+    </div>
+
+    <script>
+        var user00, user01;
+
+        document.getElementById('go-Game').addEventListener('click', function () {
+
+            user00 = document.getElementById('p-00').value;
+            user01 = document.getElementById('p-01').value;
+
+            if (!user00 || !user01) {
+                alert('Informe o nome de cada jogador!');
+            } else {
+                location.href = 'index.html';
+            }
+
+            // permite compartilhar dados com outros scripts
+            localStorage.setItem('player0', user00);
+            localStorage.setItem('player1', user01);
+
+        })
+    </script>
+
+</body>
+
+</html>
